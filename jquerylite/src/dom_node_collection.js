@@ -20,4 +20,10 @@ DOMNodeCollection.prototype.empty = function(){
   }
 };
 
+DOMNodeCollection.prototype.append = function (args) {
+  for (var i = 0; i < array.length; i++) {
+    array[i]
+  }
+};
+
 module.exports = DOMNodeCollection;
