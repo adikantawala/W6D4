@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("class DOMNodeCollection {\n  constructor (htmlArray) {\n    this.htmlArray = htmlArray;\n  }\n}\n\nDOMNodeCollection.prototype.html = function (arg) {\n  if (typeof arg === 'undefined') {\n    return this.htmlArray[0].innerHTML;\n  } else {\n    for (let i = 0; i < this.htmlArray.length; i++) {\n      this.htmlArray[i].innerHTML = arg;\n    }\n  }\n};\n\nDOMNodeCollection.prototype.empty = function(){\n  for (var i = 0; i < this.htmlArray.length; i++) {\n    this.htmlArray[i] = \"\";\n  }\n};\n\nmodule.exports = DOMNodeCollection;\n\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+eval("class DOMNodeCollection {\n  constructor (htmlArray) {\n    this.htmlArray = htmlArray;\n  }\n}\n\nDOMNodeCollection.prototype.html = function (arg) {\n  if (typeof arg === 'undefined') {\n    return this.htmlArray[0].innerHTML;\n  } else {\n    for (let i = 0; i < this.htmlArray.length; i++) {\n      this.htmlArray[i].innerHTML = arg;\n    }\n  }\n};\n\nDOMNodeCollection.prototype.empty = function(){\n  for (var i = 0; i < this.htmlArray.length; i++) {\n    this.htmlArray[i].innerHTML = \"\";\n  }\n};\n\nmodule.exports = DOMNodeCollection;\n\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
 
 /***/ }),
 
