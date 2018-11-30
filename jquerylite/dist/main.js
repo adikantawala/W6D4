@@ -86,14 +86,25 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/dom_node_collection.js":
+/*!************************************!*\
+  !*** ./src/dom_node_collection.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("class DOMNodeCollection {\n  constructor (htmlArray) {\n    this.htmlArray = htmlArray;\n  }\n}\n\nDOMNodeCollection.prototype.html = function (arg) {\n  if (typeof arg === 'undefined') {\n    return this.htmlArray[0].innerHTML;\n  } else {\n    for (let i = 0; i < this.htmlArray.length; i++) {\n      this.htmlArray[i].innerHTML = arg;\n    }\n  }\n};\n\nmodule.exports = DOMNodeCollection;\n\n\n//# sourceURL=webpack:///./src/dom_node_collection.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("const $l = function (selector) {\n  if (typeof selector === \"string\"){\n    let matches = Array.from(document.querySelectorAll(selector));\n    return matches;\n  }\n};\n\nwindow.$l = $l;\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const DOMNodeCollection = __webpack_require__(/*! ./dom_node_collection.js */ \"./src/dom_node_collection.js\");\n\nconst $l = function (selector) {\n  if (typeof selector === \"string\"){\n    let matches = Array.from(document.querySelectorAll(selector));\n    matches = new DOMNodeCollection(matches);\n    return matches;\n  } else if (selector instanceof HTMLElement) {\n    let htmlEls = new DOMNodeCollection([selector]);\n    return htmlEls;\n  }\n};\n\nwindow.$l = $l;\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
