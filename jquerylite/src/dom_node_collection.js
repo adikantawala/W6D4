@@ -14,4 +14,10 @@ DOMNodeCollection.prototype.html = function (arg) {
   }
 };
 
+DOMNodeCollection.prototype.empty = function(){
+  for (var i = 0; i < this.htmlArray.length; i++) {
+    this.htmlArray[i] = "";
+  }
+};
+
 module.exports = DOMNodeCollection;
